@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="SHORTCUT ICON" href="./nlogo_black_pre.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./dispatch-style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>NL CAD DISP ROOM</title>
+</head>
+<body>
+    <div class="header">
+        <img src="./favicon.png" class="san-andeas-logo" width="155" height="155" alt="" />
+        <label class="logo-text">SAN ANDREAS LAW ENFORCEMENT MDC</lab>
+        <img src="./nlogo.png"width="155" class="server-logo" height="155" alt="">
+        <form action="/submit_call" method="POST">
+        <div id="panel">
+            <nav>
+                <li><span><img class = "cuffs" src="./cuffs.png" alt=""></span></li>
+            </nav>
+            <label class="arrest">ПАНЕЛЬ ВЫЗОВОВ 911</label>
+            <label for="description" class="description">ОПИСАНИЕ: </label>
+            <input type="text" name="description" class="description_input">
+            <label class="location-text">ЛОКАЦИЯ: </label>
+            <input type="text" class="location" name="location">
+            <label class="status">СТАТУС: </label>
+            <input type="text" class="status-input" name="status">
+            <input class="create_arrest" type="submit" value="ОТПРАВИТЬ">
+        </div>
+        </form>
+        <form action="/change_call" method="POST">
+        <div id="panel">
+            <nav>
+                <li><span><img class = "cuffs" src="./ticket.png" alt=""></span></li>
+            </nav>
+            <label class="arrest">ИЗМЕНИТЬ/УДАЛИТЬ ВЫЗОВ 911</label>
+            <label for="description" class="description">ID ВЫЗОВА: </label>
+            <input type="text" name="id" class="id">
+            <label class="location-text">НОВЫЙ СТАТУС: </label>
+            <input type="text" class="new_status" name="new_status">
+            <input class="create_arrest" type="submit" value="УДАЛ/ИЗМ.">
+        </div>
+    </form>
+    <form action="/delete_auto" method="POST">
+        <div id="panel">
+            <nav>
+                <li><span><img class = "cuffs" src="./ticket.png" alt=""></span></li>
+            </nav>
+            <label class="arrest">УДАЛИТЬ АВТО ИЗ РОЗЫСКА</label>
+            <label for="plate" class="description">Номер: </label>
+            <input type="text" name="plate" class="id">
+            <br><br>
+            <input class="create_arrest" type="submit" value="УДАЛ/ИЗМ.">
+        </div>
+    </form>
+        <form action="/add_wanted" method="POST">
+        <div id="wanted-person">
+            <nav>
+                <li><span><img class = "cuffs" src="./ticket.png" alt=""></span></li>
+            </nav>
+            <label class="arrest">ОБЪЯВИТЬ В РОЗЫСК ЧЕЛОВЕКА</label>
+            <label for="description" class="description">ИМЯ: </label>
+            <input type="text" name="name" class="id">
+            <label class="location-text">НАРУШЕНИЯ: </label>
+            <input type="text" class="new_status" name="violations">
+            <label class="status">ПРИМЕТЫ: </label>
+            <input type="text" class="pr" name="signs">
+            <input class="create_arrest" type="submit" value="ОБЪЯВИТЬ">
+        </div>
+        </form>
+        <form action="/add_auto" method="POST">
+        <div id="wanted-person">
+            <nav>
+                <li><span><img class = "cuffs" src="./ticket.png" alt=""></span></li>
+            </nav>
+            <label class="arrest">ОБЪЯВИТЬ В РОЗЫСК АВТОМОБИЛЬ</label>
+            <label for="description" class="description">НОМЕР: </label>
+            <input type="text" name="plate" class="id">
+            <label class="location-text">ВЛАДЕЛЕЦ: </label>
+            <input type="text" class="new_status" name="owner">
+            <label class="status">ПРИМЕТЫ: </label>
+            <input type="text" class="pr" name="signs">
+            <input class="create_arrest" type="submit" value="ОБЪЯВИТЬ">
+        </div>
+    </form>
+    </div>
+</body>
+</html>

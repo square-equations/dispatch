@@ -1,0 +1,10 @@
+{
+  "name": "pd_database",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

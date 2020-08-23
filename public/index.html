@@ -1,0 +1,268 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="SHORTCUT ICON" href="./nlogo_black_pre.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>NL CAD</title>
+</head>
+<body>
+    <div class="header">
+        <img src="./favicon.png" class="san-andeas-logo" width="155" height="155" alt="" />
+        <label class="logo-text">SAN ANDREAS LAW ENFORCEMENT MDC</lab>
+        <img src="./nlogo.png"width="155" class="server-logo" height="155" alt="">
+        <div id="units">
+            <p class="units">АКТИВНЫЕ ЮНИТЫ НА СМЕНЕ</p>
+        </div>
+        <table>
+            <tr class="main">
+                <th>МАР-КА</th>
+                <th>ОФИЦЕР</th>
+                <th>СТАТУС</th>
+            </tr>
+        </table>
+        <div class="form">
+            <center><nav>
+               <form name ="addunits" id="addunits">
+                    <li><input class="mark" type="text" placeholder="МАР-КА" name="mark"></li>
+                    <li><input type="text" class="mark" placeholder="ОФИЦЕР" name="officer"></li>
+                    <li><input class="mark" type="text" placeholder="СТАТУС" name="status"></li>
+                    <input type="submit" class="add" value="ДОБАВИТЬ">
+                    <!--<input class="add" type="submit" value="ДОБАВИТЬ">--> 
+                </form>
+            </nav></center>
+        </div>
+        <div class="form2">
+            <form action="/change" method="POST"> 
+                &nbsp;<input type="text" name="mark" placeholder="Новая мар-ка" class="mark2">
+                <input type="text" name="status" placeholder="Новый статус" class="mark2">  
+                <input type="submit" class="find-button" value="Удал./Измен.">
+            </form>
+        </div>
+        <div id="wanteds">
+            <form name="find-wanteds" id ="find-wanteds">
+                <center><nav>
+                <li><input class="find-person" id="find-person" type="submit" value="РАЗЫСКИВАЕМЫЕ ПОДОЗРЕВАЕМЫЕ"></li>
+            </form>
+                <li><input class="find-person" id="find-ts" value="РАЗЫСКИВАЕМЫЙ ТРАНСПОРТ" type="submit"></li>
+                </nav></center>
+        </div>
+        <div id="getperson">
+            <label class="find-writings-person">ПОИСК ЗАПИСЕЙ НА ЧЕЛОВЕКА</label>
+        <nav>
+            <form name="unique-person-find" id="unique-person-find">
+                <li><input class="name-surname" name="person-to-find" type="text" placeholder="ИМЯ И ФАМИЛИЯ"></li>
+                <li><input type="submit" class="find-button2" value="ПОИСК"></li>
+            </form>
+        </nav>
+        </div>
+        <div id="getperson">
+            <label class="find-writings-person">ПОИСК ЗАПИСЕЙ НА АВТОМОБИЛЬ</label>
+        <nav>
+            <form name="unique-auto-find" id="unique-auto-find">
+                <li><input class="name-surname" name="number" type="text" placeholder="НОМЕР АВТОМОБИЛЯ"></li>
+                <li><input type="submit" class="find-button2" value="ПОИСК"></li>
+            </form>
+        </nav>
+        </div>
+        <div id="calls">
+            <p><font color="red">ВЫЗОВ 911</font></p>
+        </div>
+        <form name="arrest" action ="/arrest" method="POST">
+            <div id="arrest">
+                <nav>
+                    <li><span><img class = "cuffs" src="./cuffs.png" alt=""></span></li>
+                </nav>
+                <label class="arrest">СОСТАВИТЬ АРРЕСТ</label>
+                <label for="name_surname" class="text-name">ИМЯ И ФАМИЛИЯ: </label>
+                <input type="text" name="name_surname" class="name_surname">
+                <label class="date-birth-text">ДАТА РОЖДЕНИЯ: </label>
+                <input type="text" class="date-birth" name="date_birth">
+                <label class="reason">ОБВИНЕНИЯ: </label>
+                <textarea name="reason_input" class="reason-input"></textarea>
+                <label class="location-arrest">ЛОКАЦИЯ: </label>
+                <input type="text" class="location-arrest-input" name="location_arrest_input">
+                <label class="officer-text">ОФИЦЕР: </label>
+                <input type="text" class="officer-input" name="officer_input">
+                <input class="create_arrest" type="submit" value="СОСТАВИТЬ">
+            </div>
+        </form>
+        <br>
+        <form name="ticket" action ="/ticket" method="POST">
+            <div id="arrest">
+                <nav>
+                    <li><span><img class = "cuffs" src="./ticket.png" alt=""></span></li>
+                </nav>
+                <label class="arrest">СОСТАВИТЬ ТИКЕТ</label>
+                <label for="name_surname" class="text-name">ИМЯ И ФАМИЛИЯ: </label>
+                <input type="text" name="name_surname" class="name_surname">
+                <label class="date-birth-text">НОМЕРНОЙ ЗНАК: </label>
+                <input type="text" class="date-birth" name="number_plate">
+                <label class="reason">НАРУШЕНИЯ: </label>
+                <textarea name="violations" class="reason-input"></textarea>
+                <label class="location-arrest">АВТОМОБИЛЬ: </label>
+                <input type="text" class="location-arrest-input" name="auto">
+                <label class="officer-text">ОФИЦЕР: </label>
+                <input type="text" class="officer-input" name="officer">
+                <input class="create_arrest" type="submit" value="СОСТАВИТЬ">
+            </div>
+        </form>
+    </div>
+    <script>
+        Array.prototype.isEmpty = function() {
+            return this.length == 0;
+        }
+        function Get(){
+            $.ajax({
+                url: '/units',
+                method: 'GET',
+                contentType: 'application/json',
+                success: (units) => {
+                    $.each(units, (index, unit) => {
+                        $('table').append(AddUnit(unit));
+                    });
+                }
+            })
+        } 
+        function CreateUnit(userMark, userOfficer, userStatus) {
+            $.ajax({
+                url: '/units',
+                method: 'POST',
+                type: 'application/json',
+                data: {mark: userMark, officer: userOfficer, status: userStatus},
+                success: (data) => {
+                    reset();
+                    $('table').append(AddUnit(data));
+                }
+            })
+        }
+        function reset () {
+            let form = document.forms["addunits"];
+            form.reset();
+        }
+        $("#addunits").submit(function(e) {
+            e.preventDefault();
+            var mark = this.elements["mark"].value;
+            let officer = this.elements["officer"].value;
+            var status = this.elements["status"].value;
+            CreateUnit(mark, officer, status);
+        });
+        function AddUnit(unit) {
+            return `<tr><td>${unit.mark}</td><td>${unit.officer}</td><td>${unit.status}</td></tr>`;
+        }
+        function DisplayWantedPersons() {
+            $.ajax({
+                url: '/wanteds',
+                method: 'GET',
+                contentType: 'application/json',
+                success: (data) => {
+                    let persons = '';
+                    $.each(data, (index, person) => {
+                        persons += `${index + 1}. Имя: ${person.name} ${person.surname} - Статус : ${person.status}\n`;
+                    })
+                    alert(persons);
+                    console.log(data);
+                }
+            })
+        }
+
+        function FindWanted(name) {
+            $.ajax({
+                url: '/wanteds' + '/' + name,
+                method: 'GET',
+                contentType: 'application/json',
+                success: (wanteds) => {
+                    let matches = '';
+                    matches += `Совпадений найдено: ${wanteds.length}\n`;
+                    $.each(wanteds, (index, wanted) => {
+                        let violations = '';
+                        wanted.violations.forEach(element => {
+                            violations += element;
+                        });
+                        matches += `${index + 1}. Имя: ${wanted.name}\n    Фамилия: ${wanted.surname} \n    Нарушения: ${violations}\n    ПРИМЕТЫ: ${wanted.signs}\n    СТАТУС: ${wanted.status}\n`;
+                    })
+                    alert(matches);
+                }
+            })
+        }
+
+        function FindAuto (plate) {
+            $.ajax({
+                url: '/autos/' + plate,
+                method: 'GET',
+                contentType: 'application/json',
+                success: (auto) => {
+                    if (auto.status != 'НЕ НАЙДЕНО!') {
+                        let matches = `Совпадений найдено: ${auto.length}\n`;
+                        let message = '';
+                        $.each(auto, (index, car) => {
+                            message += `\n ${index + 1}. Владелец: ${car.name_surname} \n    Нарушения: ${car.violations} \n    Офицеры, которые выписали штраф: ${car.officer}\n    Марка авто : ${car.auto}`;
+                        })
+                        alert(matches + message);
+                    } else {
+                        alert('Нету записей про данное авто!');
+                    }
+                }
+            })
+        }
+        function DisplayWantedAutos () {
+            $.ajax({
+                url: '/wanted_autos',
+                method: 'GET',
+                contentType: 'application/json',
+                success: (data) => {
+                    let autos = '';
+                    $.each(data, (index, auto) => {
+                        autos += `${index + 1}. Номерной знак: ${auto.plate}\n    Владелец: ${auto.owner}\n    Признаки: ${auto.signs}\n    СТАТУС: ${auto.status}\n`;
+                    });
+                    alert(autos);
+                }
+            })
+        }
+        function GetCalls() {
+            $.ajax({
+                url: '/calls',
+                method: 'GET',
+                contentType: 'application/json',
+                success: (call) => {
+                    call.isEmpty ? $('#calls').append(EmptyCall()) : $('#calls').append(MakeCall(call));
+                    console.log(call);
+                }
+            })
+        }
+
+        function MakeCall (call) {
+            return `<p>ОПИСАНИЕ: ${call.description}</p><p>ЛОКАЦИЯ: ${call.location}</p><p>СТАТУС: ${call.status}</p>`
+        }
+
+        function EmptyCall () {
+            return `<p align = "center">Текущих вызовов нет.</p>`;
+        }
+
+        $('#find-wanteds').submit((e) => {
+            e.preventDefault();
+            DisplayWantedPersons();
+        });
+        $('#unique-person-find').submit((e) => {
+            e.preventDefault();
+            let form = document.forms["unique-person-find"];
+            let name = form.elements["person-to-find"].value;
+            FindWanted(name);
+        });
+        $('#unique-auto-find').submit(e => {
+            e.preventDefault();
+            let form = document.forms["unique-auto-find"];
+            let plate = form.elements["number"].value;
+            FindAuto(plate);
+        });
+        $('#find-ts').on('click', () => {
+            DisplayWantedAutos();
+        })
+        Get();
+        GetCalls();
+    </script>    
+</body>
+</html>

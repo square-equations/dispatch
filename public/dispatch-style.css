@@ -1,0 +1,147 @@
+#panel {
+    width: 760px;
+    height: 200px;
+    background-color: #333333;
+}
+
+.arrest {
+    margin-left: -15px;
+    transform: translateY(15px);
+    position: absolute;
+    font-size: 22px;
+}
+
+#arrest nav label {
+    font-size: 14px;
+    word-wrap: none;
+}
+
+#arrest input {
+    position: absolute;
+    background-color: #202020;
+    transform: translate(60px, 20px);
+    border: none;
+    color: white;
+}
+
+.description_input {
+    width: 450px;
+    height: 20px;
+    position: absolute;
+    margin-top: 58px;
+    text-align: left;
+    margin-left: 90px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-align: left;
+}
+
+.description {
+    font-size: 16px;
+    position: absolute;
+    margin-top: 55px;
+    margin-left: -10px;
+}
+
+.location-text {
+    position: absolute;
+    font-size: 16px;
+    margin-top: 80px;
+    margin-left: -10px;
+}
+
+.location {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin-top: 33px;
+    margin-left: 140px;
+    text-align: left;
+}
+
+.status-input {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-left: 140px;
+    margin-top: 8px;
+    resize: none;
+}
+
+.status {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+.create_arrest {
+    margin-top: 20px;
+}
+
+.id {
+    width: 450px;
+    height: 20px;
+    position: absolute;
+    margin-top: 58px;
+    text-align: left;
+    margin-left: 130px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-align: left;
+}
+
+.new_status {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin-top: 33px;
+    margin-left: 180px;
+    text-align: left;  
+}
+
+#wanted-person {
+    width: 760px;
+    height: 200px;
+    background-color: #333333;
+    transform: translate(850px, -465px);
+}
+
+.primety {
+    font-size: 16px;
+    position: absolute;
+    margin-left: -650px;
+}
+
+.pr {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-left: 180px;
+    margin-top: 8px;
+    resize: none;
+}

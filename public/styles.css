@@ -1,0 +1,404 @@
+body {
+    padding : 0;
+    margin : 0;
+    background-color: #202020;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-color: #333333;
+}
+
+.san-andeas-logo {
+    display: block;
+    margin-right: auto;
+    margin-left: 1%;
+    transform: translateY(10px);
+    filter: grayscale(100%);
+}
+
+.logo-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size : 32px;
+    margin-left: 10%;
+    padding-bottom: 50px;
+    transform: translateY(-80px);
+    color: white;
+    -webkit-text-stroke-width: 0px;
+    -webkit-text-stroke-color: black;
+    display: block;
+}
+
+.server-logo {
+    display: block;
+    margin-left: auto;
+    transform: translateY(-100px);
+}
+
+#units {
+    width: 560px;
+    height: 50px;
+    background-color: #333333;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 33px;
+    display: block;
+    margin-left: -150px;
+}
+
+nav {
+    display: inline-block;
+}
+
+table {
+    margin-top: 15px;
+    width: 560px; /* Ширина таблицы */ 
+    border-spacing: 7px 11px; /* Расстояние между ячейками */  
+    margin-left: -150px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    background-color: #333333;
+}
+
+.main {
+    background-color: #333333;
+    border-bottom: #202020 solid 5px;
+}
+
+.form {
+    margin-top: 20px;
+    background-color: #333333;
+    width: 560px;
+    height: 150px;
+    margin-left: -150px;
+}
+nav {
+    text-align: right;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin-top: 15px;
+}
+nav li {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: color .3s linear;
+    margin-right: 16px;
+}
+
+input.mark {
+    width: 160px;
+    height: 45px;
+    background-color: #202020;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.add {
+    width: 540px;
+    height: 65px;
+    border: none;
+    outline: hidden;
+    background-color: #3f3f3f;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+INPUT[type="text"] {
+    color: #ffe;
+}
+
+
+.mark2 {
+    width: 195px;
+    height: 90px;
+    background-color: #202020;
+    border: none;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.alert {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+}
+
+.mark-to-find-text {
+    margin-left: 20px;
+}
+
+.form2 {
+    margin-top: 20px;
+    background-color: #333333;
+    width: 560px;
+    height: 120px;
+    margin-left: -150px;
+}
+
+.find-button {
+    outline: hidden;
+    background-color: #202020;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#wanteds {
+    width: 510px;
+    height: 175px;
+    transform: translate(430px, -410px);
+    position: fixed;
+    background-color: #333333;
+}
+
+.find-person {
+    width: 220px;
+    height: 140px;
+    border: none;
+    outline: hidden;
+    background-color: #3f3f3f;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+    white-space: pre-line;
+}
+
+#getperson {
+    width: 510px;
+    height: 150px;
+    display: flexbox;
+    transform: translate(430px, -220px);
+    background-color: #333333;
+    vertical-align: top;
+}
+
+.find-writings-person {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    margin-left: 15px;
+}
+
+.name-surname {
+    widows: 335px;
+    height: 60px;
+    border: none;
+    background-color: #202020;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+}
+
+.find-button2 {
+    outline: hidden;
+    background-color: #202020;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    width: 135px;
+    height: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+#calls {
+    width: 510px;
+    height: 190px;
+    transform: translate(430px, -210px);
+    background-color: #333333;
+}
+
+#calls p {
+    margin-top : 10px;
+    margin-left: 10px;
+    font-size: 22px
+}
+
+#arrest {
+    width: 760px;
+    height: 265px;
+    background-color: #333333;
+    transform: translate(950px, -910px);
+}
+
+.arrest {
+    margin-left: -15px;
+    transform: translateY(15px);
+    position: absolute;
+    font-size: 22px;
+}
+
+#arrest nav label {
+    font-size: 14px;
+    word-wrap: none;
+}
+
+#arrest input {
+    position: absolute;
+    background-color: #202020;
+    transform: translate(60px, 20px);
+    border: none;
+    color: white;
+}
+
+.date {
+    position: absolute;
+    transform: translate(-20px, 40px);
+}
+
+.name_surname {
+    width: 450px;
+    height: 20px;
+    position: absolute;
+    margin-top: 37px;
+    margin-left: 90px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text-name {
+    font-size: 16px;
+    position: absolute;
+    margin-top: 55px;
+    margin-left: -10px;
+}
+
+.date-birth {
+    width: 450px;
+    height: 25px;
+    background-color: #202020;
+    border: none;
+    font-size: 33px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-left: 150px;
+}
+
+.date-birth-text {
+    position: absolute;
+    font-size: 16px;
+    margin-top: 80px;
+    margin-left: -10px;
+}
+
+.date-birth {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    margin-top: 13px;
+    margin-left: 140px;
+}
+
+.reason {
+    position: absolute;
+    font-size: 16px;
+    margin-top: 105px;
+    margin-left: -10px;
+}
+textarea{
+    width: 450px;
+    height: 60px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 57px;
+    margin-left: 200px;
+    resize: none;
+    color: white
+}
+
+.location-arrest {
+    position: absolute;
+    font-size: 16px;
+    margin-left: 45px;
+}
+
+.location-arrest-input {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: -17px;
+    margin-left: 140px;
+    resize: none;
+}
+
+.officer-text {
+    position: absolute;
+    font-size: 16px;
+    margin-left: 45px;
+    margin-top: 25px;
+}
+
+.officer-input {
+    width: 450px;
+    height: 20px;
+    background-color: #202020;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    margin-left: 140px;
+    resize: none;
+}
+
+.create_arrest {
+    width: 150px;
+    height: 40px;
+    border: none;
+    outline: hidden;
+    background-color: #3f3f3f;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-top: 33px;
+    margin-left: 540px;
+}
